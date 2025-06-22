@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CUESTIONARIOS DE HTML, CSS Y JavaScript</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+      color: #2c3e50;
+      font-size: 2.5em;
+      text-align: center;
+    }
+
+    .card-container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .quiz-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      width: 220px;
+      height: 150px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #34495e;
+      font-size: 1.2em;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quiz-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .quiz-card::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      background: #3498db;
+      bottom: 0;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+
+    .quiz-card:active {
+      transform: scale(0.97);
+    }
+
+    .quiz-card:nth-child(1)::after {
+      background: #e67e22;
+    }
+
+    .quiz-card:nth-child(2)::after {
+      background: #27ae60;
+    }
+
+    .quiz-card:nth-child(3)::after {
+      background: #8e44ad;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CUESTIONARIOS DE HTML, CSS Y JavaScript</h1>
+
+
+
+  <div class="card-container">
+    <a href="index3.html" target="_blank" class="quiz-card">Cuestionario 1<br><small>HTML y Accesibilidad</small></a>
+    <a href="index2.html" target="_blank" class="quiz-card">Cuestionario 2<br><small>CSS y Diseño</small></a>
+    <a href="cuestionario1/cues.html" target="_blank" class="quiz-card">Cuestionario 3<br><small>JavaScript y Lógica</small></a>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario Interactivo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Contenedor de Registro (visible inicialmente) -->
+    <div class="registration-container" id="registration-container">
+        <h2>Registro</h2>
+        <form id="registration-form">
+            <div class="form-group">
+                <label for="user-name">Nombre completo:</label>
+                <input type="text" id="user-name" required>
+            </div>
+            <div class="form-group">
+                <label for="user-email">Correo electrónico:</label>
+                <input type="email" id="user-email" required>
+            </div>
+            <button type="submit" id="start-quiz-btn">Comenzar Cuestionario</button>
+        </form>
+    </div>
+
+    <!-- Contenedor del Cuestionario (oculto inicialmente) -->
+    <div class="quiz-container" id="quiz-container" style="display: none;">
+        <h1>Cuestionario</h1>
+        
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        
+        <form id="quiz-form">
+            <!-- Las secciones se generarán dinámicamente con JavaScript -->
+        </form>
+        
+        <div class="navigation-buttons">
+            <button type="button" id="prev-btn" disabled>Anterior</button>
+            <button type="button" id="next-btn">Siguiente</button>
+            <button type="button" id="submit-btn" style="display: none;">Enviar Respuestas</button>
+        </div>
+    </div>
+    
+    <!-- Contenedor de Resultados (oculto inicialmente) -->
+    <div class="results-container" id="results-container" style="display: none;">
+        <h2>Resultados</h2>
+        <p id="score-display"></p>
+        <div id="correct-answers-container"></div>
+        <button type="button" id="restart-btn">Volver a Intentar</button>
+    </div>
+    
+    <script src="script2.js"></script>
+</body>
+</html>
