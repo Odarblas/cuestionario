@@ -1,0 +1,29 @@
+name: Generate sitemap
+
+on:
+  push:
+    branches:
+      - main  # O la rama que uses
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate sitemap
+        uses: cicirello/generate-sitemap@v1
+        with:
+          base-url-path: 'https://odarblas.github.io/cuestionario/'
+          path-to-root: '.'
+      - name: Upload sitemap
+        uses: actions/upload-artifact@v3
+        with:
+          name: sitemap
+          path: sitemap.xml
+      - name: Deploy sitemap
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.event_name == 'push'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./sitemap
